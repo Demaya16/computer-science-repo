@@ -1,41 +1,98 @@
-README.md
+# Cybersecurity Network Topology Lab
 
-Name: Devin Maya
-Email: demaya@ucsc.edu
-CruzID: Demaya
-Student ID: 1761702
-
-Submission Details
-This submission includes the following files for the assignment:
-
-DevinMaya-lab1.pdf
-This PDF contains all the solutions to the Prelab and Lab questions. It includes detailed explanations and necessary screenshots demonstrating the steps and results of the labs.
+## Student Information
+- **Name:** Devin Maya
 
 
+## Project Overview
+This lab focuses on fundamental cybersecurity concepts, network topology creation, and basic shell scripting. It demonstrates the practical application of network security principles using Mininet, a network emulator, to create and manipulate virtual network environments.
 
-DevinMaya-script.sh
-This is the shell script created during Prelab 1. Important: Ensure this script has executable permissions before running it. Use the command chmod +x YourName-script.sh to set the correct permissions.
+## Submission Contents
 
+### 1. DevinMaya-lab1.pdf
+- Comprehensive solutions to Prelab and Lab questions
+- Detailed explanations of cybersecurity concepts explored
+- Screenshots demonstrating:
+  - Network topology configurations
+  - Command outputs
+  - Security testing results
 
-DevinMaya-topo.py
-This Python script defines the custom Mininet topology created in Lab 1. It setups up the network configuration including hosts, switches, and connections as specified in the lab tasks.
+### 2. DevinMaya-script.sh
+- A shell script created during Prelab 1
+- Demonstrates basic system information gathering and security checks
+- **Important:** Ensure executable permissions are set before running
 
+  ```bash
+  chmod +x DevinMaya-script.sh
+  ```
 
+- To run the script:
 
-README
-This README file, which outlines the contents of each submitted file and includes personal and contact information for any queries regarding this submission.
+  ```bash
+  ./DevinMaya-script.sh
+  ```
 
+### 3. DevinMaya-topo.py
+- Python script defining a custom Mininet topology for Lab 1
+- Implements a network configuration with:
+  - Multiple hosts
+  - Switches
+  - Interconnections
+- Simulates a real-world network for cybersecurity testing
 
-Important Instructions
-Executable Permissions for Shell Script:
-It is crucial to ensure that the shell script (YourName-script.sh) has executable permissions. This permission is necessary for the script to run properly on Unix/Linux systems.
-You can set executable permissions using the following command in the terminal:
-bash
-Copy code
-chmod +x DevinMaya-script.sh
+### 4. README.md
+- This file, providing an overview of the project and submission details
 
-After setting the permissions, you can run the script directly from the command line by navigating to its directory and typing ./DevinMaya-script.sh.
-Running the Topology Script:
-To execute the topology script (DevinMaya-topo.py), ensure you have Python and Mininet installed on your system. You can run this script by typing python DevinMaya-topo.py 
-Contact Information
-For any clarifications or issues regarding this assignment, please feel free to contact me at the email address provided above. I am available to respond to any queries or provide further information as needed.
+## Lab Objectives and Cybersecurity Focus
+
+1. **Network Topology Design:**
+   - Create and manipulate virtual network environments
+   - Understand the implications of different network structures on security
+
+2. **Basic Security Scripting:**
+   - Develop shell scripts for system information gathering
+   - Implement simple security checks and reporting
+
+3. **Mininet Exploration:**
+   - Use Mininet to simulate complex network topologies
+   - Analyze network behavior in a controlled environment
+
+4. **Security Testing:**
+   - Perform basic security tests on the created network topology
+   - Understand potential vulnerabilities in different network configurations
+
+5. **Documentation and Reporting:**
+   - Practice clear and concise documentation of security-related tasks
+   - Learn to effectively communicate network configurations and test results
+
+## Setup and Execution Instructions
+
+### Shell Script (DevinMaya-script.sh)
+1. Set executable permissions:
+   ```bash
+   chmod +x DevinMaya-script.sh
+   ```
+2. Run the script:
+   ```bash
+   ./DevinMaya-script.sh
+   ```
+
+### Topology Script (DevinMaya-topo.py)
+1. Ensure Python and Mininet are installed on your system
+2. Run the script:
+   ```bash
+   sudo python DevinMaya-topo.py
+   ```
+
+## Additional Notes
+- The lab exercises are designed to provide hands-on experience with network security concepts
+- Pay special attention to the security implications of different network configurations
+- The scripts and topologies created serve as a foundation for more advanced cybersecurity experiments
+
+## Contact Information
+For any clarifications, issues, or further discussions regarding this assignment, please contact:
+
+Devin Maya
+Email: demaya1601@gmail.com
+
+I am available to respond to queries, provide additional information, or discuss the cybersecurity aspects of this Project in more detail.
