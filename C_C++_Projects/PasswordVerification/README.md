@@ -1,4 +1,4 @@
-# Assignment 3: Password Checker README
+#  Password Checker README
 
 ## Description
 
@@ -8,7 +8,7 @@ the assignment conssissted of making sure the password_checker.c file was passin
 
 - Devin Maya
 - Email: demaya@ucsc.edu
-- Assignment 3: Password Checker
+- Assignment Password Checker
 
 ## File Names and What They Do
 
