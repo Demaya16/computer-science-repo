@@ -1,0 +1,29 @@
+# Ignore everything
+*
+
+#not these files
+!.gitignore
+!.gitlab-ci.yml
+!*.c
+!*.h
+!*.sh
+!Makefile
+!*.md
+!*.pdf
+!*.jpg
+!*.png
+!*.plt
+!*.dat
+!*.tex
+
+# ignore these files
+*.o
+*.out
+*.pyc
+*~
+*.bak
+*.aux
+*.log
+*.txt
+
+
