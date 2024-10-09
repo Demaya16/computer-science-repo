@@ -54,6 +54,6 @@ The target name should be `growing_arrays`
 └── Problem B
     ├── growing_arrays.c
     ├── growing_arrays.h
-    ├── test_growing_arrays.c (optional)
+    ├── test_growing_arrays.c 
     └── Makefile
 ```
