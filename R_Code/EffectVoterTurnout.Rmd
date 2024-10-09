@@ -1,0 +1,178 @@
+---
+title: "Final"
+author: "Devin Maya"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# some useful settings
+knitr::opts_chunk$set(echo = TRUE, tidy.opts = list(width.cutoff = 55), tidy = TRUE, fig.align="center")
+options(scipen=100)
+options(tinytex.verbose = TRUE)
+```
+
+## Loading data
+
+```{r}
+# Load Haven package to load STATA file
+library(haven)
+
+# Create an indicator variable 
+data<- read_dta("comp_ia_bootstrap3_RCT (5).dta")
+
+# Viewing data
+View(data)
+
+head(data)
+```
+
+## Data cleaning & factoring & splicing
+
+```{r}
+#Creating new data frame for variables needed
+v2 <- data$vote02
+v8 <- data$vote98
+v0 <- data$vote00
+gen <- data$female
+bus <- data$busy
+nr <- data$newreg
+con <- data$contact
+re <- data$treat_real
+age <- data$age
+
+data_n <- data.frame(turnout = v2, vote02= v8, vote00= v0, gender = gen, busy = bus, n_reg_voter = nr, contact = con, treat = re, age = age)
+
+data_n <- na.omit(data_n)
+```
+
+Variables we included in our new data frame:
+
+vote02: Which is the outcome of interest- vote in 2002
+treat_real: Assignment to treatment group
+contact: Received phone call and responded to question "Can I count on you to vote next Tuesday?" regardless of answer
+newreg - Newly registered voter
+busy - Whether the phone line was busy when call was made
+age - Age of the individual in years
+female - Gender of the individual
+vote00 - Voted in 2000 (prior to treatment)
+vote98: Voted in 98 (prior to treatment
+
+## Summary Statistics
+```{r}
+#Creating plot spaces
+par(mfrow = c(1, 2))
+
+#Getting summary statistics of treament
+summary(data_n$treat)
+
+#Getting plot for treatment variable
+plot(factor(data_n$treat), xlab = "Conditions", ylab = "Participants Frequency", pch = 21, bg = 2, col = c(2,4))
+
+legend("topright", fill = c(2, 4), legend = c("No Call",
+"Call"), bty = "n")
+
+#Getting summary statistics of output
+summary(data_n$turnout)
+
+#Getting plot for output variable
+plot(factor(data_n$turnout),xlab = "Turnover", ylab = "Participants Frequency", pch = 21, bg = 2, col = c(3,5))
+
+legend("topleft", fill = c(3, 5), legend = c("Did vote",
+"No vote"), bty = "n")
+```
+
+
+
+
+## Running Regressions
+
+### OLS
+```{r}
+#OLS just on treatment
+OLS <- glm(turnout~ treat, data=data_n)
+summary(OLS)
+
+#OLS on treatment w/ controls
+OLS_every <- glm(turnout~ ., data=data_n)
+summary(OLS_every)
+```
+
+### Post-Lasso
+```{r}
+#Load Gamlr
+library(gamlr)
+
+#Creating Matrix
+x<- model.matrix(turnout~(.+poly(age,2,raw=TRUE))^2 , data = data_n)[,-1]
+
+#Checking dimensions of matrix
+dim(x)
+```
+
+```{r}
+#Post-LASSO
+
+#Set seed
+set.seed(0)
+
+#Step 1
+#LASSO regular for controls
+y_mod <- cv.gamlr(x, data_n$turnout)
+
+#Step 2
+#LASSO on treatment
+d_mod <- cv.gamlr(x,data_n$treat)
+
+#Find non-zero coefficients
+y_nonzero_coef <- which(coef(y_mod, select='min')[-1]!=0)
+d_nonzero_coef <- which(coef(d_mod, select='min')[-1]!=0)
+
+#Step 3
+#Collect covariates
+nz_coef_uni <- union(y_nonzero_coef, d_nonzero_coef)
+#length(nz_coef_uni)
+
+#Step 4
+# Regress our outcome Y on D and W
+# Y = Voter Turnout rate
+# D = Randomization of getting a phone call or not
+# W = Controls
+
+#Creating new data frame that we'll use for POST-LASSO
+pl_data <- data.frame(voter_turnout_rate =data_n$turnout, treatment = data_n$treat, as.matrix(x[,nz_coef_uni]))
+
+
+#Final step (POSTLASSO)
+post_lasso <- glm(voter_turnout_rate~., data = pl_data)
+coef(summary(post_lasso))
+
+#Finding the treatment
+coef(summary(post_lasso))["treatment", ]
+```
+
+## Counter Factual
+
+Assume every Participants get called
+```{r}
+#Counter factual situation, where treatment is true
+
+#Creating c_fact
+#Copying old data frame used for Post-Lasso, and making treatments=1
+treat_cf <- pl_data
+treat_cf$treatment <- 1
+
+#Average of counterfactual
+a <-mean(predict(post_lasso, treat_cf))
+a
+
+#Average of dataset
+b <- mean(pl_data$voter_turnout_rate)
+b
+
+#Difference btwn both averages
+a-b
+```
+```
+
+
