@@ -1,6 +1,6 @@
-# Cybersecurity Network Topology Lab
+# Cybersecurity FireWall Network Topology 
 
-## Student Information
+## Author Information
 - **Name:** Devin Maya
 
 
