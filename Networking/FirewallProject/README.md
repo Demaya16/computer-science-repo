@@ -1,98 +1,119 @@
-# Cybersecurity FireWall Network Topology 
 
-## Author Information
-- **Name:** Devin Maya
+---
 
+# 🔐 **Cybersecurity Firewall Network Topology** 🔐
 
-## Project Overview
-This lab focuses on fundamental cybersecurity concepts, network topology creation, and basic shell scripting. It demonstrates the practical application of network security principles using Mininet, a network emulator, to create and manipulate virtual network environments.
+<p align="center">
+  <img src="https://img.shields.io/badge/Network_Security-Mininet-blue?style=for-the-badge&logo=linux&logoColor=white" alt="Network Security Badge">
+  <img src="https://img.shields.io/badge/Shell_Scripting-Bash-green?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash Scripting Badge">
+</p>
 
-## Submission Contents
+---
 
-### 1. DevinMaya-lab1.pdf
-- Comprehensive solutions to Prelab and Lab questions
-- Detailed explanations of cybersecurity concepts explored
-- Screenshots demonstrating:
-  - Network topology configurations
-  - Command outputs
-  - Security testing results
+## 👤 **Author Information**
+- **Name:** Devin Maya  
+- **Email:** [demaya1601@gmail.com](mailto:demaya1601@gmail.com)
 
-### 2. DevinMaya-script.sh
-- A shell script created during Prelab 1
-- Demonstrates basic system information gathering and security checks
-- **Important:** Ensure executable permissions are set before running
+---
+
+## 🛠️ **Project Overview**
+
+This project demonstrates core **cybersecurity** concepts, including **network topology creation**, **basic security scripting**, and practical applications of **Mininet**. It focuses on building secure network environments, testing them for vulnerabilities, and documenting the process.
+
+---
+
+## 📁 **Submission Contents**
+
+### 1. **DevinMaya-lab1.pdf**
+- Comprehensive answers to **Prelab** and **Lab** questions.
+- Detailed explanations of the cybersecurity principles explored.
+- Includes **screenshots** illustrating:
+  - Network topology configurations.
+  - Command outputs and security test results.
+
+### 2. **DevinMaya-script.sh**
+- A **shell script** designed during Prelab 1 to gather system information and perform basic security checks.
+- **To Run the Script:**
 
   ```bash
   chmod +x DevinMaya-script.sh
-  ```
-
-- To run the script:
-
-  ```bash
   ./DevinMaya-script.sh
   ```
 
-### 3. DevinMaya-topo.py
-- Python script defining a custom Mininet topology for Lab 1
-- Implements a network configuration with:
-  - Multiple hosts
-  - Switches
-  - Interconnections
-- Simulates a real-world network for cybersecurity testing
+### 3. **DevinMaya-topo.py**
+- A Python script that sets up a **custom Mininet topology** featuring multiple hosts, switches, and connections for **network simulation**.
+- Used to simulate real-world network environments for security testing.
 
-### 4. README.md
-- This file, providing an overview of the project and submission details
+### 4. **README.md**
+- This file provides an overview of the project, scripts, and execution instructions.
 
-## Lab Objectives and Cybersecurity Focus
+---
+
+## 🔍 **Lab Objectives & Cybersecurity Focus**
 
 1. **Network Topology Design:**
-   - Create and manipulate virtual network environments
-   - Understand the implications of different network structures on security
+   - Design, build, and manipulate virtual networks using **Mininet**.
+   - Explore the impact of various network structures on overall security.
 
-2. **Basic Security Scripting:**
-   - Develop shell scripts for system information gathering
-   - Implement simple security checks and reporting
+2. **Security Scripting:**
+   - Develop **bash scripts** for gathering system data and performing basic security analysis.
 
-3. **Mininet Exploration:**
-   - Use Mininet to simulate complex network topologies
-   - Analyze network behavior in a controlled environment
+3. **Mininet Simulation:**
+   - Simulate complex network topologies and analyze their behavior in **controlled environments**.
 
 4. **Security Testing:**
-   - Perform basic security tests on the created network topology
-   - Understand potential vulnerabilities in different network configurations
+   - Perform fundamental security tests on the virtual network.
+   - Identify and understand potential vulnerabilities in different configurations.
 
-5. **Documentation and Reporting:**
-   - Practice clear and concise documentation of security-related tasks
-   - Learn to effectively communicate network configurations and test results
+5. **Documentation & Reporting:**
+   - Learn to document configurations, findings, and **security test results** clearly and concisely.
 
-## Setup and Execution Instructions
+---
 
-### Shell Script (DevinMaya-script.sh)
-1. Set executable permissions:
+## 🚀 **Setup and Execution Instructions**
+
+### **Shell Script (DevinMaya-script.sh)**
+
+1. Set the script as executable:
+
    ```bash
    chmod +x DevinMaya-script.sh
    ```
+
 2. Run the script:
+
    ```bash
    ./DevinMaya-script.sh
    ```
 
-### Topology Script (DevinMaya-topo.py)
-1. Ensure Python and Mininet are installed on your system
-2. Run the script:
+---
+
+### **Topology Script (DevinMaya-topo.py)**
+
+1. Ensure **Python** and **Mininet** are installed.
+2. Run the Mininet topology script:
+
    ```bash
    sudo python DevinMaya-topo.py
    ```
 
-## Additional Notes
-- The lab exercises are designed to provide hands-on experience with network security concepts
-- Pay special attention to the security implications of different network configurations
-- The scripts and topologies created serve as a foundation for more advanced cybersecurity experiments
+---
 
-## Contact Information
-For any clarifications, issues, or further discussions regarding this assignment, please contact:
+## 📑 **Key Learning Areas**
 
-Devin Maya
-Email: demaya1601@gmail.com
+- **Cybersecurity Practices:** Learn how to design and secure network topologies.
+- **System Information Gathering:** Use shell scripts to collect system information.
+- **Network Emulation:** Use Mininet for real-world network simulations.
+- **Security Auditing:** Test network vulnerabilities and document findings.
 
-I am available to respond to queries, provide additional information, or discuss the cybersecurity aspects of this Project in more detail.
+---
+
+## 📬 **Contact Information**
+
+For any questions or further discussions about the project, please contact:
+
+**Devin Maya**  
+📧 [demaya1601@gmail.com](mailto:demaya1601@gmail.com)  
+Feel free to reach out for any clarifications or in-depth discussions regarding the cybersecurity and networking aspects of this project.
+
+---
