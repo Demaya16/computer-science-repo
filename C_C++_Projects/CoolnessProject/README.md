@@ -1,4 +1,4 @@
-# Assignment 2: Coolness Calculation README
+# Coolness Calculation README
 
 ## Description
 
