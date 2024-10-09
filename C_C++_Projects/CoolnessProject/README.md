@@ -8,7 +8,7 @@ The Coolness program is a C application designed to calculate "coolness" as a fu
 
 - Devin Maya
 - Email: demaya@ucsc.edu
-- Assignment 2: Coolness
+- Assignment: Coolness
 
 ## File Names and What They Do
 
